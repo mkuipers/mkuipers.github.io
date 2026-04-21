@@ -1,0 +1,172 @@
+:root {
+  --bg0: #0f1114;
+  --bg1: #1a1d24;
+  --ink: #e8e6e3;
+  --muted: #9a9590;
+  --accent: #c4a574;
+  --card: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(17px, 2.2vw, 20px);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.55;
+  background:
+    radial-gradient(120% 80% at 20% 0%, rgba(196, 165, 116, 0.12), transparent 55%),
+    radial-gradient(90% 60% at 100% 20%, rgba(120, 140, 180, 0.08), transparent 50%),
+    linear-gradient(165deg, var(--bg0), var(--bg1) 45%, #12151c);
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.wrap {
+  position: relative;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 5vw, 2rem) 3rem;
+}
+
+.hero {
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 7vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  background: linear-gradient(120deg, var(--ink) 0%, #d4cfc7 45%, var(--accent) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.card {
+  margin-bottom: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.card-muted {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.card p {
+  margin: 0;
+}
+
+.card p + p {
+  margin-top: 0.75rem;
+}
+
+.features {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.features li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  color: var(--muted);
+}
+
+.features li + li {
+  border-top: 1px solid var(--border);
+}
+
+.check {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+blockquote {
+  margin: 1.1rem 0 0;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid var(--border);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+.foot {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.foot p {
+  margin: 0.35rem 0;
+}
+
+.small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
